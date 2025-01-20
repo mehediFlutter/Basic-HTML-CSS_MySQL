@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +14,12 @@
             <div class="logo">WatchCraft</div>
             <ul class="nav-links">
                 <li><a href="index.php" class="active">Home</a></li>
-               
-                <li><a href="products.php">Collection</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="registration.php">Registration</a></li>
-                <li><a href="about.php">About Us</a></li>
+                <li><a href="products.php" target="_blank">Collection</a></li>
+
+                <li><a href="login.php" target="_blank">Login</a></li>
+                <li><a href="registration.php" target="_blank">Registration</a></li>
+                <li><a href="about.php" target="_blank">About Us</a></li>
+                <li><a href="add_product.php" target="_blank">Add Product</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +29,7 @@
             <div class="hero-content">
                 <h1>Timeless Elegance for Modern Men</h1>
                 <p>Discover our exclusive collection of luxury timepieces</p>
-                <a href="collection.html" class="cta-button">Shop Now</a>
+              <a href="collection.html" class="cta-button">Shop Now</a>
             </div>
         </section>
   

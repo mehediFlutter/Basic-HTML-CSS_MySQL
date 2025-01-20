@@ -1,9 +1,38 @@
+<?php
+require('db.php');
+
+if (isset($_POST['submit'])) {
+    // Sanitize inputs
+    $productName = mysqli_real_escape_string($conn, $_POST['productName']);
+    $productPrice = mysqli_real_escape_string($conn, $_POST['productPrice']);
+
+    // Validate inputs
+    if (strlen($productName) < 3) {
+        echo "Product name must be at least 3 characters long!";
+    } elseif (!is_numeric($productPrice) || $productPrice < 0) {
+        echo "Please enter a valid price!";
+    } else {
+        // Insert product into database
+        $sql = "INSERT INTO products (name, price) VALUES ('$productName', '$productPrice')";
+        
+        if (mysqli_query($conn, $sql)) {
+            echo "Product added successfully!";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Entry</title>
+    <link rel="stylesheet" href="css/add_product.css">
    
 </head>
 <body>
